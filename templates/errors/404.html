@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container header-container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 logo-font text-black">404</h1>
+            <p class="lead text-muted">The page you are looking for isn't available.</p>
+            <div class="my-5">
+                <a href="{% url 'product_list' %}?category=all" class="btn btn-lg btn-primary">
+                    Return to Shop
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

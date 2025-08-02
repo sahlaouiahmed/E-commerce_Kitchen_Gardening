@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load reviews_extras %}
+
+{% block title %}More Reviews - Kitchen Garden{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-4 text-center">
+        <div class="col">
+            <a href="{% url 'submit_review' %}" class="btn btn-primary">Add Review</a>
+        </div>
+    </div>
+    <div class="row mb-4 text-center">
+        <div class="col">
+            <h2>All Customer Reviews</h2>
+        </div>
+    </div>
+    <ul class="list-group">
+        {% for review in reviews %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>{{ review.user.username }}</h5>
+                        <div>
+                            {% for _ in review.rating|times %}
+                                <i class="fas fa-star text-warning"></i>
+                            {% endfor %}
+                            {% for _ in 5|times %}
+                                {% if forloop.counter > review.rating %}
+                                    <i class="far fa-star text-warning"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p class="mb-1">{{ review.comment }}</p>
+                        <small class="text-muted">{{ review.created_at }}</small>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

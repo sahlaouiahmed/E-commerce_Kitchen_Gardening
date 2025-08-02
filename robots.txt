@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /account/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /order/
+Allow: /
+
+Sitemap: https://ci-finalproject-93798f70d775.herokuapp.com/sitemap.xml

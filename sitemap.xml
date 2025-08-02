@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/?category=all</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/articles/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/contact/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/?category=seed</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/?category=supply</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/?next=/reviews/submit/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/reviews/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/5/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/?next=/store/add-to-cart/5/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/3/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/?next=/store/add-to-cart/3/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/2/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/?next=/store/add-to-cart/2/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/1/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/?next=/store/add-to-cart/1/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/store/products/4/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/login/?next=/store/add-to-cart/4/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/articles/4/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/articles/3/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/articles/2/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/articles/1/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ci-finalproject-93798f70d775.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-12-06T04:18:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

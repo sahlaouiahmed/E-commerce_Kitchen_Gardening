@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Canceled{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+            <h2 class="display-4 mb-4">Payment Canceled</h2>
+            <p>Your payment was not processed. You can try again or contact us for assistance.</p>
+            <a class="btn btn-primary mt-4" href="{% url 'checkout' %}">Return to Checkout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

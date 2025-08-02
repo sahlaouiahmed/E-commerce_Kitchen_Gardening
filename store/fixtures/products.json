@@ -1,0 +1,72 @@
+[
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Organic Basil Seeds",
+      "description": "High-quality organic basil seeds to grow aromatic and flavorful basil in your garden.",
+      "price": "2.99",
+      "image": "images/products/basil_seeds.jpg",
+      "category": "seed",
+      "stock": 50,  
+      "created_at": "2023-11-15T00:00:00Z",
+      "updated_at": "2023-11-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "name": "Tomato Seeds",
+      "description": "Grow juicy and delicious tomatoes with our premium seeds.",
+      "price": "3.49",
+      "image": "images/products/tomato_seeds.jpg",
+      "category": "seed",
+      "stock": 40,
+      "created_at": "2023-11-15T00:00:00Z",
+      "updated_at": "2023-11-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "name": "Gardening Gloves",
+      "description": "Durable and comfortable gardening gloves to protect your hands.",
+      "price": "5.99",
+      "image": "images/products/gardening_gloves.jpg",
+      "category": "supply",
+      "stock": 30,  
+      "created_at": "2023-11-15T00:00:00Z",
+      "updated_at": "2023-11-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "name": "Organic Fertilizer",
+      "description": "Boost the growth of your plants with our all-natural, organic fertilizer.",
+      "price": "10.99",
+      "image": "images/products/organic_fertilizer.jpg",
+      "category": "supply",
+      "stock": 20,  
+      "created_at": "2023-11-15T00:00:00Z",
+      "updated_at": "2023-11-15T00:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "name": "Herb Garden Kit",
+      "description": "Everything you need to start your own herb garden, including seeds, pots, and soil.",
+      "price": "19.99",
+      "image": "images/products/herb_garden_kit.jpg",
+      "category": "supply",
+      "stock": 15,  
+      "created_at": "2023-11-15T00:00:00Z",
+      "updated_at": "2023-11-15T00:00:00Z"
+    }
+  }
+]

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Success{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+            <h2 class="display-4 mb-4">Payment Successful</h2>
+            <p>Thank you for your order! You will receive a confirmation email shortly.</p>
+            <a class="btn btn-primary mt-4" href="{% url 'home' %}">Return to Home</a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-2">
+            <h3 class="mb-3">Order Details</h3>
+            <p><strong>Order Number:</strong> {{ order.id }}</p>
+            <p><strong>Date:</strong> {{ order.created_at }}</p>
+            <p><strong>Total Amount:</strong> ${{ order.total_amount }}</p>
+            <p><strong>Delivery Cost:</strong> ${{ order.delivery_cost }}</p>
+            <p><strong>Shipping Date:</strong> {{ order.shipping_date }}</p>
+            <p><strong>Shipping Address:</strong></p>
+            <p>
+                {{ order.first_name }} {{ order.last_name }}<br>
+                {{ order.address }}<br>
+                {{ order.city }}, {{ order.state }} {{ order.zip_code }}
+            </p>
+            <h4>Items</h4>
+            <ul class="list-group">
+                {% for item in order_items %}
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{{ item.product.image.url }}" class="img-fluid" alt="{{ item.product.name }}">
+                            </div>
+                            <div class="col-md-10">
+                                <h5>{{ item.product.name }}</h5>
+                                <p>{{ item.product.description }}</p>
+                                <p><strong>Price:</strong> ${{ item.product.price }}</p>
+                                <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

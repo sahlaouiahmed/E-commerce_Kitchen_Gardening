@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 class="display-4">Shopping Cart</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% if cart_items %}
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover d-none d-md-table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col" class="text-center">Quantity</th>
+                                <th scope="col" class="text-center">Stock Available</th>
+                                <th scope="col" class="text-right">Price</th>
+                                <th scope="col" class="text-right">Total</th>
+                                <th scope="col" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in cart_items %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="{{ item.product.image.url }}" class="img-thumbnail rounded-circle" alt="{{ item.product.name }}" style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+                                            <div>
+                                                <h5 class="mb-1">{{ item.product.name }}</h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <form method="post" action="{% url 'update_cart' item.id %}" class="d-inline-block">
+                                            {% csrf_token %}
+                                            <div class="input-group">
+                                                <input type="number" id="quantity_{{ item.id }}" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" class="form-control text-center" style="max-width: 60px;">
+                                                <div class="input-group-append">
+                                                    <button type="submit" class="btn btn-outline-primary btn-sm"><i class="fas fa-sync-alt"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <td class="text-center">{{ item.product.stock }}</td>
+                                    <td class="text-right">${{ item.product.price }}</td>
+                                    <td class="text-right">${{ item.quantity|multiply:item.product.price }}</td>
+                                    <td class="text-center">
+                                        <a href="{% url 'delete_cart_item' item.id %}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <!-- Mobile View -->
+                    <div class="d-md-none">
+                        {% for item in cart_items %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ item.product.image.url }}" class="img-thumbnail rounded-circle" alt="{{ item.product.name }}" style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+                                        <div>
+                                            <h5 class="mb-1">{{ item.product.name }}</h5>
+                                            <p class="mb-0">Price: ${{ item.product.price }}</p>
+                                            <p class="mb-0">Total: ${{ item.quantity|multiply:item.product.price }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <form method="post" action="{% url 'update_cart' item.id %}" class="d-inline-block">
+                                            {% csrf_token %}
+                                            <div class="input-group">
+                                                <input type="number" id="quantity_{{ item.id }}" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" class="form-control text-center" style="max-width: 60px;">
+                                                <div class="input-group-append">
+                                                    <button type="submit" class="btn btn-outline-primary btn-sm"><i class="fas fa-sync-alt"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <a href="{% url 'delete_cart_item' item.id %}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="mb-0">Stock Available: {{ item.product.stock }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-4 flex-column flex-md-row">
+                    <a href="{% url 'product_list' %}" class="btn btn-outline-secondary btn-lg mb-3 mb-md-0"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                    <h4 class="mb-3 mb-md-0">Total: ${{ cart_items|sum_cart_total }}</h4>
+                    <a href="{% url 'checkout' %}" class="btn btn-success btn-lg">Proceed to Checkout <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-12 text-center">
+                <h3 class="mt-5">Your cart is empty</h3>
+                <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg mt-3">Continue Shopping</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Delete Article{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Are you sure you want to delete "{{ article.title }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-danger btn-custom-width">Yes, delete</button>
+            <a href="{% url 'article_list' %}" class="btn btn-secondary btn-custom-width">No, cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

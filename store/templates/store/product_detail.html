@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-8">
+            <h2 class="mb-3">{{ product.name }}</h2>
+            <p class="text-muted mb-4">{{ product.description }}</p>
+            <h4 class="text-primary mb-4">${{ product.price }}</h4>
+            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-success">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </a>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="mb-4">You May Also Like</h3>
+            <div class="row">
+                {% for related_product in related_products %}
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 text-center">
+                            <img src="{{ related_product.image.url }}" class="card-img-top" alt="{{ related_product.name }}">
+                            <div class="card-body d-flex flex-column">
+                                <h6 class="card-title">{{ related_product.name }}</h6>
+                                <p class="card-text text-muted">{{ related_product.description|truncatewords:15 }}</p>
+                                <p class="card-text text-primary">${{ related_product.price }}</p>
+                                <a href="{% url 'product_detail' related_product.pk %}" class="btn btn-outline-primary mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
