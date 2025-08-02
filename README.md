@@ -10,7 +10,7 @@ Join our community of gardening enthusiasts and discover the joy of growing your
 
 Start your gardening adventure with us today and let your garden flourish with Kitchen Garden!
 
-You can access the Kitchen Garden website by clicking [here](https://ci-finalproject-93798f70d775.herokuapp.com/).
+You can access the Kitchen Garden website by clicking [here](https://e-commerce-kitchen-gardening-4bcd684608e0.herokuapp.com/).
 
 
 ## Table of Contents
@@ -43,7 +43,7 @@ You can access the Kitchen Garden website by clicking [here](https://ci-finalpro
 
 ## Usage
 
-Once the development server is running, you can access the application in your web browser at [KitchenGarden](https://ci-finalproject-93798f70d775.herokuapp.com/). From there, you can:
+Once the development server is running, you can access the application in your web browser at [KitchenGarden](https://e-commerce-kitchen-gardening-4bcd684608e0.herokuapp.com/). From there, you can:
 
 - Browse products
 - Add products to your shopping cart
