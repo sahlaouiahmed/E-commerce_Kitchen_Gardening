@@ -35,13 +35,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 #DEBUG = os.environ.get('DEBUG', False)
 DEBUG = False
 
-#ALLOWED_HOSTS = [
-#    '8000-sahlaouiahm-cifinalproj-lkav3y3db5q.ws.codeinstitute-ide.net', 
-#    '.herokuapp.com', 
-#    'ci-finalproject-93798f70d775.herokuapp.com', 
-#    'localhost'
-#    '127.0.0.1'
-#]
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
 
@@ -126,21 +119,6 @@ WSGI_APPLICATION = 'kitchen_garden.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': os.environ.get('DB_NAME'),
-#        'USER': os.environ.get('DB_USER'),
-#        'PASSWORD': os.environ.get('DB_PASSWORD'),
-#        'HOST': os.environ.get('DB_HOST'),
-#        'PORT': os.environ.get('DB_PORT'),
-#    }
-#}
-
-
-
-
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
@@ -193,34 +171,6 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-# Cloudinary settings for media files
-#CLOUDINARY_STORAGE = {
-#    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-#    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-#    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-#}
-#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-
-#if 'USE_AWS' in os.environ:
-# Bucket Config
-#AWS_STORAGE_BUCKET_NAME = 'ci-finalproject'
-#AWS_S3_REGION_NAME = 'eu-central-1'
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-# Static and media files
-#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-#STATICFILES_LOCATION = 'static'
-
-#Override static and media URLs in production
-#STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-
-
 
 
 # Default primary key field type
