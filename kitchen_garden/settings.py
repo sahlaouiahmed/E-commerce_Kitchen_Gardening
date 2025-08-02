@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.environ.get('DEBUG', False)
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = [
 #    '8000-sahlaouiahm-cifinalproj-lkav3y3db5q.ws.codeinstitute-ide.net', 
