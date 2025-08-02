@@ -41,7 +41,7 @@ DEBUG = False
 #    'localhost'
 #    '127.0.0.1'
 #]
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
 
 # Application definition
