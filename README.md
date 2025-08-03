@@ -57,7 +57,7 @@ Once the development server is running, you can access the application in your w
 - HTML/CSS: Frontend design
 - JavaScript: Frontend interactivity
 - Stripe: Payment processing
-- PostgreSQL: Database (for production)
+- MySql: Database (for production)
 - Python: Programming language
 
 ## User Stories
