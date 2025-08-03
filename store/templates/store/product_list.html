@@ -5,71 +5,70 @@
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row mb-4">
-        <div class="col-md-12 text-center">
-            <h2>Our Products</h2>
-        </div>
+    <div class="text-center mb-4">
+        <h2 class="display-6 fw-bold">Our Products</h2>
     </div>
-    <div class="row mb-4 justify-content-center">
-        <div class="col-md-6 col-lg-4">
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6 col-lg-5">
             <form method="GET" action="{% url 'product_list' %}">
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search for products...">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">Search</button>
-                    </div>
+                    <button class="btn btn-primary" type="submit">Search</button>
                 </div>
             </form>
         </div>
     </div>
+
     {% if user.is_superuser %}
     <div class="row mb-4">
-        <div class="col-md-12 text-right">
-            <a href="{% url 'add_product' %}" class="btn btn-primary">Add Product</a>
+        <div class="col text-end">
+            <a href="{% url 'add_product' %}" class="btn btn-success">Add Product</a>
         </div>
     </div>
     {% endif %}
+
     <div class="row mb-4">
-        <div class="col-md-3">
-            <h3>Filter by Category</h3>
-            <div class="list-group mb-3">
-                <a href="{% url 'product_list' %}?category=all" class="list-group-item list-group-item-action{% if category == 'all' %} active{% endif %}">
-                    All Products
-                </a>
-                <a href="{% url 'product_list' %}?category=seed" class="list-group-item list-group-item-action{% if category == 'seed' %} active{% endif %}">
-                    Our Seeds
-                </a>
-                <a href="{% url 'product_list' %}?category=supply" class="list-group-item list-group-item-action{% if category == 'supply' %} active{% endif %}">
-                    Our Supplies
-                </a>
+        <div class="col-md-3 mb-3">
+            <h4>Filter by Category</h4>
+            <div class="list-group">
+                <a href="{% url 'product_list' %}?category=all" class="list-group-item{% if category == 'all' %} active{% endif %}">All</a>
+                <a href="{% url 'product_list' %}?category=seed" class="list-group-item{% if category == 'seed' %} active{% endif %}">Seeds</a>
+                <a href="{% url 'product_list' %}?category=supply" class="list-group-item{% if category == 'supply' %} active{% endif %}">Supplies</a>
             </div>
         </div>
+
         <div class="col-md-9">
             <div class="row">
                 {% for product in products %}
-                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
-                        <div class="card text-center shadow-sm d-flex flex-column">
-                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title"><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h5>
-                                <p class="card-text">{{ product.description }}</p>
-                                <p class="card-text"><strong>${{ product.price }}</strong></p>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-4 d-flex align-items-center">
+                                <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="{{ product.name }}">
                             </div>
-                            <div class="card-footer d-flex justify-content-center">
-                                {% if not user.is_superuser %}
-                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-custom add-to-cart-btn">
-                                    <i class="fas fa-shopping-cart"></i> Add to Cart
-                                </a>
-                                {% endif %}
-                                {% if user.is_superuser %}
-                                <div class="mt-2">
-                                    <a href="{% url 'edit_product' product.id %}" class="btn btn-secondary">Edit</a>
-                                    <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete</a>
+                            <div class="col-8">
+                                <div class="card-body d-flex flex-column justify-content-between h-100">
+                                    <h5 class="card-title"><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h5>
+                                    <p class="card-text fw-bold">💰 ${{ product.price }}</p>
+                                    <div>
+                                        {% if not user.is_superuser %}
+                                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                                        </a>
+                                        {% endif %}
+                                        {% if user.is_superuser %}
+                                        <div class="d-flex gap-2 mt-2">
+                                            <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-secondary btn-sm">Edit</a>
+                                            <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                                        </div>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
+                </div>
                 {% endfor %}
             </div>
         </div>

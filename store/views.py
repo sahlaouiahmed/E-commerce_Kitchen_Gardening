@@ -9,6 +9,7 @@ from django.conf import settings
 from datetime import datetime, timedelta
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponseForbidden
+from random import sample
 
 def product_list(request):
     query = request.GET.get('q', '')
@@ -29,8 +30,12 @@ def product_list(request):
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    related_products = Product.objects.filter(category=product.category).exclude(pk=pk)[:4]  # Fetch related products from the same category, exclude the current product, limit to 4
-    return render(request, 'store/product_detail.html', {'product': product, 'related_products': related_products})
+    all_products = Product.objects.exclude(pk=product.pk)
+    related_products = sample(list(all_products), min(4, all_products.count()))
+    return render(request, 'store/product_detail.html', {
+        'product': product,
+        'related_products': related_products
+    })
 
 @login_required
 def add_to_cart(request, product_id):
